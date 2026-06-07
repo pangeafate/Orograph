@@ -398,6 +398,7 @@ h3 {
 .visionSlide,
 .askSlide,
 .productSlide,
+.valueSlide,
 .insightGrid {
   height: 100%;
 }
@@ -1003,6 +1004,74 @@ h3 {
   padding-top: 14px;
 }
 
+.valueSlide {
+  display: grid;
+  align-items: stretch;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  min-height: 0;
+}
+
+.valueCard {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  align-content: start;
+  gap: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.valueCard::after {
+  content: "";
+  position: absolute;
+  inset: auto 24px 24px auto;
+  width: 74px;
+  height: 74px;
+  border: 1px solid var(--border-violet);
+  border-radius: 999px;
+  opacity: 0.2;
+}
+
+.valueCard--lead {
+  border-color: var(--border-violet);
+  background:
+    linear-gradient(180deg, rgba(124, 92, 255, 0.13), rgba(255, 255, 255, 0.82)),
+    var(--surface);
+}
+
+.valueNumber {
+  color: var(--violet-bright);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.valueCard svg {
+  color: var(--violet);
+}
+
+.valueCard strong {
+  color: var(--text-0);
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.14;
+}
+
+.valueCard p {
+  color: var(--text-2);
+  font-size: 1.02rem;
+  line-height: 1.58;
+}
+
 .forcesSlide {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
@@ -1511,6 +1580,7 @@ h3 {
   .pillarGrid,
   .wedgeGrid,
   .acvStrip,
+  .valueGrid,
   .arc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1571,6 +1641,7 @@ h3 {
   .pillarGrid,
   .wedgeGrid,
   .acvStrip,
+  .valueGrid,
   .arc,
   .orgLeaves,
   .workspaceGrid,

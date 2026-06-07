@@ -330,7 +330,45 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "05 / why now",
+    kicker: "05 / value",
+    title: "Value",
+    content: (
+      <div className="valueSlide">
+        <div className="valueGrid">
+          <div className="valueCard valueCard--lead">
+            <span className="valueNumber">01</span>
+            <Gauge size={30} />
+            <strong>x10-100 less expensive to run.</strong>
+            <p>
+              Deterministic agent execution behaves like optimized n8n
+              workflows: smaller scopes, fewer wasted calls, right-sized models,
+              and fewer exploratory loops.
+            </p>
+          </div>
+          <div className="valueCard">
+            <span className="valueNumber">02</span>
+            <ClipboardCheck size={30} />
+            <strong>Agents deployed by non-technical professionals as human employees.</strong>
+            <p>
+              Operators use familiar workplace conventions: job descriptions,
+              tasks, goals, KPIs, and feedback cycles.
+            </p>
+          </div>
+          <div className="valueCard">
+            <span className="valueNumber">03</span>
+            <ShieldCheck size={30} />
+            <strong>Governance assembled at runtime.</strong>
+            <p>
+              Inherited permission scopes, governance, tool grants, and e2e
+              success tests are loaded together when the agent runs.
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    kicker: "06 / why now",
     title: "Why now",
     content: (
       <div className="forcesSlide">
@@ -375,7 +413,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "06 / GTM",
+    kicker: "07 / GTM",
     title: "Land with design partners, prove governance, then go commercial.",
     content: (
       <div className="gtmSlide">
@@ -425,15 +463,11 @@ const slides: Slide[] = [
           <ArrowUpRight size={16} />
           <span>least-privilege access</span>
         </div>
-        <p className="bottomCaption">
-          Sell the consequences - observable, auditable, cost-controlled,
-          least-privilege by construction. Architecture in the demo, not the pitch.
-        </p>
       </div>
     )
   },
   {
-    kicker: "07 / model",
+    kicker: "08 / model",
     title: "A simple, consumption-aligned model.",
     content: (
       <div className="modelSlide">
@@ -473,7 +507,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "08 / moat",
+    kicker: "09 / moat",
     title:
       "The moat is compounding governance data that becomes a living copy of the company.",
     content: (
@@ -524,7 +558,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "09 / vision",
+    kicker: "10 / vision",
     title: "Where this goes: the orgchart for the governed AI workforce.",
     content: (
       <div className="visionSlide">
@@ -556,7 +590,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "10 / ask",
+    kicker: "11 / ask",
     title: "Status & ask.",
     content: (
       <div className="askSlide">

@@ -22,7 +22,7 @@ Build-ready specification for the **Orograph** investor deck (10 slides). Hand t
 
 ### Narrative arc (the spine)
 
-Title → Problem → Insight → Product → Why Now → GTM & Wedge → Business Model → Moat → Vision → Status & Ask.
+Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge → Business Model → Moat → Vision → Status & Ask.
 
 ---
 
@@ -88,7 +88,21 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ---
 
-## Slide 5 — Why Now
+## Slide 5 — Value
+
+**Graphics:** Three equal columns. Each column is a strong value proof with a numbered marker and one icon. Keep it clean, spacious, and product/value-oriented.
+
+**Top title:** "Value"
+
+**Column 1:** "x10-100 less expensive to run due to deterministic nature (think optimized n8n workflows)."
+
+**Column 2:** "Agents deployed by non-tech professionals as human employees, using familiar conventions - Job Descriptions, Tasks, Goals, KPIs."
+
+**Column 3:** "Inherited permission scopes, governance, tool grants, e2e success tests all assembled at runtime."
+
+---
+
+## Slide 6 — Why Now
 
 **Graphics:** Three "converging forces" columns, one hero stat each. Bottom bar = the open-window conclusion.
 
@@ -110,7 +124,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ---
 
-## Slide 6 — Go-to-Market & Wedge
+## Slide 7 — Go-to-Market & Wedge
 
 **Graphics:** Phased timeline with the buyer for each phase merged into it. A wedge-capability panel anchors "why they let us in."
 
@@ -136,11 +150,9 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 3. Decide the agent's **level of autonomy**
 4. All bound by **least-privilege access**
 
-**Bottom line:** "Sell the consequences — observable, auditable, cost-controlled, least-privilege by construction. Architecture in the demo, not the pitch."
-
 ---
 
-## Slide 7 — Business Model
+## Slide 8 — Business Model
 
 **Graphics:** Simple, confident layout. One dominant pricing mechanic, a pilot→subscription conversion arrow, and an ACV strip.
 
@@ -162,7 +174,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ---
 
-## Slide 8 — Moat
+## Slide 9 — Moat
 
 **Graphics:** Stacked deepening "moat" visual with the replicating-governance layer as the headline. Side panel = named-competitor differentiation. Bottom = hyperscaler risk reframed as strength.
 
@@ -186,7 +198,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ---
 
-## Slide 9 — Vision
+## Slide 10 — Vision
 
 **Graphics:** A horizon/arc visual — from "governed agents today" to "the orgchart for the AI workforce."
 
@@ -198,7 +210,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ---
 
-## Slide 10 — Status & Ask
+## Slide 11 — Status & Ask
 
 **Graphics:** Two-panel layout. Left = current status; right = the ask with a large watermark number (**$1.5M**).
 
