@@ -1730,13 +1730,139 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  .slide {
+    padding: 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   .slideFrame {
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
     border-radius: var(--radius);
-    padding: 22px;
+    min-height: calc(100svh - 20px);
+    padding: 18px 16px 24px;
+    overflow: visible;
+  }
+
+  .slideHeader {
+    gap: 12px;
+    min-height: 24px;
+    align-items: flex-start;
+  }
+
+  .kicker {
+    gap: 10px;
+    font-size: 0.78rem;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .kicker::before {
+    width: 44px;
+  }
+
+  .brand {
+    font-size: 0.62rem;
+    line-height: 1.1;
   }
 
   .slide h2 {
-    font-size: 1.72rem;
+    width: calc(100vw - 52px);
+    min-width: 0;
+    max-width: calc(100vw - 52px);
+    margin-top: 18px;
+    font-size: 1.42rem;
+    line-height: 1.08;
+    overflow-wrap: break-word;
+  }
+
+  .slideBody {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 24px;
+    overflow: visible;
+  }
+
+  .teamSlide,
+  .problemSlide,
+  .forcesSlide,
+  .gtmSlide,
+  .modelSlide,
+  .moatSlide,
+  .visionSlide,
+  .askSlide,
+  .productSlide,
+  .valueSlide,
+  .insightGrid {
+    height: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .laneGrid,
+  .laneStack,
+  .forceGrid,
+  .timeline,
+  .pillarGrid,
+  .wedgeGrid,
+  .acvStrip,
+  .valueGrid,
+  .arc,
+  .orgLeaves,
+  .workspaceGrid,
+  .conversion {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .laneCard,
+  .forceCard,
+  .timelineItem,
+  .valueCard,
+  .controlPanel,
+  .schemaPanel,
+  .moatLayer,
+  .statusPanel,
+  .askPanel,
+  .productScreen,
+  .wedgePanel,
+  .pricingHero,
+  .modelExplanation,
+  .differentiation,
+  .visionStatement,
+  .callout,
+  .economicUnlock,
+  .miniMetric,
+  .arcStep {
+    min-width: 0;
+  }
+
+  .laneCard strong,
+  .laneCard span,
+  .laneCard p,
+  .forceCard strong,
+  .forceCard p,
+  .timelineItem strong,
+  .timelineItem p,
+  .valueCard strong,
+  .valueCard p,
+  .miniMetric strong,
+  .miniMetric span,
+  .controlPanel label,
+  .traceLine,
+  .schemaBlock p,
+  .callout p,
+  .economicUnlock p,
+  .differentiation p,
+  .riskBar,
+  .windowBar,
+  .bottomCaption {
+    overflow-wrap: anywhere;
   }
 
   .titleSlide h1 {
@@ -1778,6 +1904,170 @@ h3 {
   .timeline::before,
   .arc::before {
     display: none;
+  }
+
+  .problemSlide {
+    gap: 16px;
+  }
+
+  .approachStack,
+  .laneStack {
+    gap: 12px;
+  }
+
+  .laneStack {
+    grid-template-rows: auto;
+  }
+
+  .laneStack .laneCard {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .laneCard {
+    min-height: auto;
+  }
+
+  .laneCard strong {
+    font-size: 0.98rem;
+  }
+
+  .laneCard p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .gapPointer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    gap: 10px;
+  }
+
+  .gapPointer span {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .gapPointer svg {
+    width: 26px;
+    height: 26px;
+    transform: rotate(90deg);
+  }
+
+  .problemSlide .pillarBand {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .pillarIntro strong {
+    font-size: 1.25rem;
+    line-height: 1.16;
+  }
+
+  .pillarIntro span {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .problemSlide .pillarGrid {
+    gap: 10px;
+  }
+
+  .problemSlide .pillarGrid span {
+    min-height: 56px;
+    padding: 14px;
+    font-size: 0.92rem;
+  }
+
+  .insightGrid {
+    gap: 16px;
+  }
+
+  .insightGrid > div,
+  .stacked,
+  .productSide {
+    min-width: 0;
+  }
+
+  .orgChart {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .orgNode {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .orgRail {
+    height: 34px;
+  }
+
+  .agentCard {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .agentCard strong {
+    margin-top: 10px;
+  }
+
+  .callout,
+  .schemaPanel,
+  .economicUnlock,
+  .controlPanel {
+    padding: 16px;
+  }
+
+  .axisGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productSlide {
+    gap: 16px;
+  }
+
+  .productScreen {
+    overflow: visible;
+  }
+
+  .screenBar {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .workspaceGrid {
+    min-height: auto;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+  }
+
+  .workspaceMain {
+    padding: 12px;
+  }
+
+  .productSide {
+    gap: 12px;
+  }
+
+  .controlPanel label,
+  .traceLine {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .controlPanel label strong,
+  .traceLine strong {
+    text-align: left;
   }
 
   .arcStep,
