@@ -90,7 +90,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ## Slide 5 — Value
 
-**Graphics:** Three equal columns. Each column is a strong value proof with a numbered marker and one icon. Keep it clean, spacious, and product/value-oriented.
+**Graphics:** Four equal columns. Each column is a strong value proof with a numbered marker and one icon. Keep it clean, spacious, and product/value-oriented.
 
 **Top title:** "Value"
 
@@ -98,7 +98,9 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 **Column 2:** "Agents deployed by non-tech professionals as human employees, using familiar conventions - Job Descriptions, Tasks, Goals, KPIs."
 
-**Column 3:** "Inherited permission scopes, governance, tool grants, e2e success tests all assembled at runtime."
+**Column 3:** "All components assembled at runtime - inherited permission scopes, governance, tool grants, e2e success tests."
+
+**Column 4:** "No more .md text file scatter - database records as the first class data objects."
 
 ---
 

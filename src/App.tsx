@@ -357,10 +357,20 @@ const slides: Slide[] = [
           <div className="valueCard">
             <span className="valueNumber">03</span>
             <ShieldCheck size={30} />
-            <strong>Governance assembled at runtime.</strong>
+            <strong>All components assembled at runtime.</strong>
             <p>
               Inherited permission scopes, governance, tool grants, and e2e
               success tests are loaded together when the agent runs.
+            </p>
+          </div>
+          <div className="valueCard">
+            <span className="valueNumber">04</span>
+            <Database size={30} />
+            <strong>No more .md text file scatter.</strong>
+            <p>
+              Database records become first-class data objects, so agent
+              specs, governance, versions, and provenance live in one queryable
+              system.
             </p>
           </div>
         </div>
