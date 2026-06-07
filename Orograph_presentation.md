@@ -58,7 +58,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 **Graphics:** Hero = a **Governed Agentic Orgchart** — a department of small "atomic" agent cards reporting up to a manager agent, each card showing its data fields. To the side, a real schema panel (the actual data model).
 
-**Top title:** "Stop building black boxes. Build a Governed Agentic Orgchart."
+**Top title:** "Orograph runs agents as data loaded into agnostic runtime, every change is a line in the database with e2e provenance and row-level governance."
 
 **Core insight (bold):** "Orograph defines every agent as **governed data, not code** — its job description, manager, permissions, authority tier, and budget *are* the agent. So an **ungoverned agent is structurally impossible**, behavior changes by **editing a row (no redeploy)**, and every action is **traced to who approved it**."
 
@@ -70,15 +70,13 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 - **~11 satellite tables (the "soul"):** `agent_spec_versions`, `agent_tool_access`, `agent_autonomy`, `agent_job_description`, `agent_kpis`, `agent_curated_memory`, `agent_exemplars`, `agent_failure_fingerprints`, `agent_templates`…
 - **Three-axis authority:** **Scope** (ring-fenced namespaces) · **Authority** (approval graph: who signs off which decision at which tier) · **Budget** (per-decision / per-turn / monthly ceilings)
 
-**Closing line:** "Governance, provenance, fine-tuning, and observability aren't features on top — they're the substrate."
-
 ---
 
 ## Slide 4 — Product Snapshot
 
 **Graphics:** Real product screens, multi-panel, no stage disclaimers. **Hero = a leaf orgchart of agent departments** where a professional-but-non-technical user creates and manages agents using familiar workplace conventions.
 
-**Top title:** "Build your agent workforce the way you build a team."
+**Top title:** "Build agentic workforce as you build your human team - Job Description, Goals, KPIs, Feedback Cycles."
 
 **Hero panel — Orgchart builder:** Departments of atomic agents shown as a leaf/tree orgchart. A non-technical user adds an agent by filling familiar fields — **job description, KPIs, authority/approval tier, who it reports to** — no code. New agent slots into its department and works within its lane.
 
@@ -168,7 +166,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 **Graphics:** Stacked deepening "moat" visual with the replicating-governance layer as the headline. Side panel = named-competitor differentiation. Bottom = hyperscaler risk reframed as strength.
 
-**Top title:** "The moat isn't a catalog. It's a replicating governance system that becomes a copy of the company."
+**Top title:** "The moat is compounding governance data that becomes a living copy of the company."
 
 **Headline moat — the replicating governance system:** "As a company adopts Orograph, it progressively encodes its **authority, governance, and access** into the agent orgchart — effectively building a **living copy of how the company actually decides and who's allowed to do what.** Ripping that out for a comparable product becomes extremely hard. The governance insight comes from **explicit rules + implicit feedback** given to agents over time — and we use it to build a **governance dataset that makes deployment faster for the next comparable company.** Governance, the knowledge behind it, and the ability to render it as a governed agent orgchart — that's the moat."
 

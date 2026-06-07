@@ -281,7 +281,8 @@ const slides: Slide[] = [
   },
   {
     kicker: "03 / insight",
-    title: "Stop building black boxes. Build a Governed Agentic Orgchart.",
+    title:
+      "Orograph runs agents as data loaded into agnostic runtime, every change is a line in the database with e2e provenance and row-level governance.",
     content: (
       <div className="insightGrid">
         <div>
@@ -307,16 +308,13 @@ const slides: Slide[] = [
             </p>
           </div>
         </div>
-        <div className="substrateLine">
-          Governance, provenance, fine-tuning, and observability are not
-          features on top - they are the substrate.
-        </div>
       </div>
     )
   },
   {
     kicker: "04 / product",
-    title: "Build your agent workforce the way you build a team.",
+    title:
+      "Build agentic workforce as you build your human team - Job Description, Goals, KPIs, Feedback Cycles.",
     content: (
       <div className="productSlide">
         <ProductScreen />
@@ -477,7 +475,7 @@ const slides: Slide[] = [
   {
     kicker: "08 / moat",
     title:
-      "The moat is not a catalog. It is a replicating governance system that becomes a copy of the company.",
+      "The moat is compounding governance data that becomes a living copy of the company.",
     content: (
       <div className="moatSlide">
         <div className="moatStack">
