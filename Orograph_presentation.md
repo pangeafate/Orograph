@@ -40,9 +40,9 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 ## Slide 2 — The Problem
 
-**Graphics:** Three vertical "lane" cards across the middle. Beneath them, the **4 missing pillars** render as the dominant centerpiece bar (four icon tiles). The big-player jab gets prominent treatment. The **88%** stat is a large callout.
+**Graphics:** Three "lane" cards stacked vertically on the left. A clear pointer moves from the lane stack to the right-side proof panel. The right panel is the dominant object and contains the **4 missing pillars** as four icon tiles. Remove the bottom big-player/stat/consequence row.
 
-**Top title:** "Three ways to put agents to work today. All of them leave the company exposed."
+**Top title:** "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production."
 
 **Lane 1 — Autonomous, self-building agents** *(Open Claw, Hermes — prosumer/tech-savvy):* Self-mutating black boxes that can go rogue anytime. Observability means building heavy infra (what they do, what they call each tool, when the version changed). And they **token-max** — running inefficiently while building themselves.
 
@@ -50,13 +50,7 @@ Title → Problem → Insight → Product → Why Now → GTM & Wedge → Busine
 
 **Lane 3 — Plug-and-play "AI employees"** *(buy a sales/marketing agent off a website):* Easy for non-technical users — but no control mechanisms (companies won't allow uncontrolled use) and too shallow to fine-tune.
 
-**Centerpiece — the 4 missing pillars:** "Every organization building agents today is missing the same infrastructure:" → **Governance · Provenance · Atomic fine-tuning · Observability** (four icon tiles).
-
-**Big-player jab (prominent):** "And the big players aren't building it. They're racing on frontier models — not on systems that deploy cheaply, safely, and observably *inside* companies."
-
-**Consequence line:** "The result: token-maxing and uncontrolled **agent sprawl** — which enterprises are already starting to cancel."
-
-**Hero stat (large callout):** **88%** of agent pilots never reach production.
+**Right proof panel — the 4 missing pillars:** "Every organization building agents today is missing the same infrastructure." → **Governance · Provenance · Atomic fine-tuning · Observability** (four icon tiles).
 
 ---
 

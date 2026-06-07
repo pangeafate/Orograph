@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
   ArrowUpRight,
+  ArrowRight,
   BarChart3,
   Bot,
   Boxes,
@@ -216,63 +217,64 @@ const slides: Slide[] = [
   {
     kicker: "02 / problem",
     title:
-      "Three ways to put agents to work today. All of them leave the company exposed.",
+      "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production.",
     content: (
       <div className="problemSlide">
-        <div className="laneGrid">
-          {[
-            {
-              icon: BrainCircuit,
-              label: "Autonomous, self-building agents",
-              names: "Open Claw, Hermes",
-              copy:
-                "Self-mutating black boxes that can go rogue anytime. Observability means building heavy infra, and they token-max while building themselves."
-            },
-            {
-              icon: Workflow,
-              label: "SDK / framework-built agents",
-              names: "LangGraph, Mastra, OpenAI / Anthropic SDKs",
-              copy:
-                "Powerful and controllable, but foundational infra comes before value. Scalability and observability come right back."
-            },
-            {
-              icon: Bot,
-              label: "Plug-and-play AI employees",
-              names: "Sales and marketing agents off a website",
-              copy:
-                "Easy for non-technical users, but shallow to fine-tune and missing the control mechanisms companies require."
-            }
-          ].map(({ icon: Icon, label, names, copy }) => (
-            <div className="laneCard" key={label}>
-              <Icon size={24} />
-              <strong>{label}</strong>
-              <span>{names}</span>
-              <p>{copy}</p>
-            </div>
-          ))}
+        <div className="approachStack" aria-label="Existing approaches">
+          <div className="stackLabel">Existing approaches</div>
+          <div className="laneStack">
+            {[
+              {
+                icon: BrainCircuit,
+                label: "Autonomous, self-building agents",
+                names: "Open Claw, Hermes",
+                copy:
+                  "Self-mutating black boxes that can go rogue anytime. Observability means building heavy infra, and they token-max while building themselves."
+              },
+              {
+                icon: Workflow,
+                label: "SDK / framework-built agents",
+                names: "LangGraph, Mastra, OpenAI / Anthropic SDKs",
+                copy:
+                  "Powerful and controllable, but foundational infra comes before value. Scalability and observability come right back."
+              },
+              {
+                icon: Bot,
+                label: "Plug-and-play AI employees",
+                names: "Sales and marketing agents off a website",
+                copy:
+                  "Easy for non-technical users, but shallow to fine-tune and missing the control mechanisms companies require."
+              }
+            ].map(({ icon: Icon, label, names, copy }) => (
+              <div className="laneCard" key={label}>
+                <Icon size={24} />
+                <div>
+                  <strong>{label}</strong>
+                  <span>{names}</span>
+                  <p>{copy}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="gapPointer" aria-hidden="true">
+          <span>governance gap</span>
+          <ArrowRight size={42} />
         </div>
         <div className="pillarBand">
-          <p>Every organization building agents today is missing the same infrastructure:</p>
-          <div className="pillarGrid">
-            <span><ShieldCheck size={19} />Governance</span>
-            <span><Fingerprint size={19} />Provenance</span>
-            <span><Target size={19} />Atomic fine-tuning</span>
-            <span><Radar size={19} />Observability</span>
-          </div>
-        </div>
-        <div className="problemBottom">
-          <div className="jab">
-            <strong>Big players are not building it.</strong>
+          <div className="pillarIntro">
+            <strong>Every organization building agents today is missing the same infrastructure.</strong>
             <span>
-              They are racing on frontier models - not systems that deploy
-              cheaply, safely, and observably inside companies.
+              Without this layer, agents multiply faster than companies can
+              control, tune, observe, or audit them.
             </span>
           </div>
-          <MiniMetric value="88%" label="of agent pilots never reach production" />
-          <p>
-            The result: token-maxing and uncontrolled agent sprawl - which
-            enterprises are already starting to cancel.
-          </p>
+          <div className="pillarGrid">
+            <span><ShieldCheck size={21} />Governance</span>
+            <span><Fingerprint size={21} />Provenance</span>
+            <span><Target size={21} />Atomic fine-tuning</span>
+            <span><Radar size={21} />Observability</span>
+          </div>
         </div>
       </div>
     )
