@@ -271,6 +271,54 @@ h3 {
   line-height: 1.04;
 }
 
+/* ============================================================
+   Scroll-reveal
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Glitch / scramble heading — width- & wrap-stable per-character cells.
+   The final glyph (.gc-base) holds the cell width; the scramble glyph
+   (.gc-glitch) is an absolute overlay, so swapping it never reflows. */
+.glitch-heading { word-break: normal; }
+.gw { display: inline-block; white-space: nowrap; position: relative; }
+.gw--accent { color: var(--violet-bright); }
+.gc { display: inline-block; position: relative; }
+.gc-glitch {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  color: var(--violet-bright);
+  opacity: 0.9;
+  pointer-events: none;
+  text-shadow: 0 0 12px rgba(124, 92, 255, 0.55);
+}
+.hero-line--accent .gc-glitch { color: var(--cyan); text-shadow: 0 0 12px rgba(79, 214, 224, 0.5); }
+
+/* Curved underline pinned to a single word — sits fully below the glyphs */
+.gw-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 0.06em;
+  width: 100%;
+  height: 0.26em;
+  overflow: visible;
+}
+
 .slideBody {
   flex: 1;
   min-height: 0;
@@ -281,6 +329,9 @@ h3 {
 .slide--title .slideFrame {
   display: grid;
   padding: 38px 44px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(249, 251, 255, 0.93)),
+    var(--bg-1);
 }
 
 .slide--title .slideBody {
@@ -293,10 +344,22 @@ h3 {
 .titleSlide {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   width: 100%;
   height: 100%;
   text-align: center;
+  overflow: hidden;
+}
+
+.lakestromDotField {
+  position: absolute;
+  inset: -38px;
+  z-index: 0;
+  width: calc(100% + 76px);
+  height: calc(100% + 76px);
+  opacity: 1;
+  pointer-events: none;
 }
 
 .titleSlide h1 {
@@ -309,6 +372,8 @@ h3 {
 .tagline {
   position: relative;
   z-index: 2;
+  min-width: 0;
+  max-width: min(720px, 100%);
   margin-top: 26px;
   color: var(--text-0);
   font-family: var(--font-display);
@@ -319,64 +384,13 @@ h3 {
 .subcopy {
   position: relative;
   z-index: 2;
+  min-width: 0;
+  width: min(870px, 100%);
   max-width: 870px;
   margin-top: 28px;
   color: var(--text-2);
   font-size: 1.05rem;
   line-height: 1.72;
-}
-
-.constellation {
-  position: absolute;
-  inset: 80px 170px;
-  opacity: 0.8;
-}
-
-.constellation::before,
-.constellation::after {
-  content: "";
-  position: absolute;
-  inset: 18% 8%;
-  border: 1px solid rgba(124, 92, 255, 0.18);
-  border-radius: var(--radius-lg);
-  transform: rotate(-7deg);
-}
-
-.constellation::after {
-  inset: 28% 22%;
-  border-color: rgba(79, 214, 224, 0.14);
-  transform: rotate(7deg);
-}
-
-.dot {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: var(--violet-bright);
-  box-shadow: 0 0 24px rgba(124, 92, 255, 0.65);
-}
-
-.dot--a {
-  top: 10%;
-  left: 22%;
-}
-
-.dot--b {
-  top: 24%;
-  right: 16%;
-  background: var(--cyan);
-}
-
-.dot--c {
-  right: 26%;
-  bottom: 16%;
-}
-
-.dot--d {
-  left: 14%;
-  bottom: 28%;
-  background: var(--amber);
 }
 
 .pill {
@@ -392,6 +406,7 @@ h3 {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.teamSlide,
 .problemSlide,
 .forcesSlide,
 .gtmSlide,
@@ -403,6 +418,103 @@ h3 {
 .valueSlide,
 .insightGrid {
   height: 100%;
+}
+
+.teamSlide {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.founderPortraitPanel,
+.founderLead,
+.founderProofs > div {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.founderPortraitPanel {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.founderPortraitPanel img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.founderMeta {
+  border-top: 1px solid var(--border);
+  margin-top: 18px;
+  padding-top: 16px;
+}
+
+.founderMeta strong {
+  display: block;
+  color: var(--text-0);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.founderMeta span {
+  display: block;
+  margin-top: 8px;
+  color: var(--violet-bright);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.founderStory {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  min-height: 0;
+}
+
+.founderLead {
+  padding: 20px 22px;
+  color: var(--text-0);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+.founderProofs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+}
+
+.founderProofs > div {
+  padding: 22px;
+}
+
+.founderProofs strong {
+  display: block;
+  color: var(--text-0);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.founderProofs p {
+  margin-top: 12px;
+  color: var(--text-2);
+  font-size: 0.94rem;
+  line-height: 1.52;
 }
 
 .laneGrid {
@@ -1125,14 +1237,15 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   position: relative;
+  --timeline-badge-center: 49px;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  top: 26px;
-  left: 12%;
-  right: 12%;
+  top: var(--timeline-badge-center);
+  left: var(--timeline-badge-center);
+  right: calc(33.333% - 61px);
   height: 1px;
   background: linear-gradient(90deg, var(--violet), var(--cyan));
   opacity: 0.65;
@@ -1284,7 +1397,7 @@ h3 {
 .acvStrip {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -1589,6 +1702,7 @@ h3 {
 
   .problemBottom,
   .insightGrid,
+  .teamSlide,
   .productSlide,
   .modelSlide,
   .moatSlide,
@@ -1626,20 +1740,25 @@ h3 {
   }
 
   .titleSlide h1 {
-    font-size: 4rem;
+    font-size: 3.35rem;
   }
 
   .tagline {
+    max-width: 20ch;
     font-size: 1.12rem;
   }
 
   .subcopy {
+    width: 100%;
+    max-width: 31ch;
     font-size: 0.95rem;
+    overflow-wrap: break-word;
   }
 
   .laneGrid,
   .forceGrid,
   .timeline,
+  .founderProofs,
   .pillarGrid,
   .wedgeGrid,
   .acvStrip,
@@ -1667,10 +1786,6 @@ h3 {
   .arcStep:nth-child(4) {
     min-height: 150px;
     transform: none;
-  }
-
-  .constellation {
-    inset: 40px;
   }
 
   .deckControls {

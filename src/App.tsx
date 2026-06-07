@@ -29,10 +29,13 @@ import {
   TimerReset,
   Workflow
 } from "lucide-react";
+import GlitchHeading from "./components/GlitchHeading.jsx";
+import { LakestromDotField } from "./components/LakestromDotField";
 
 type Slide = {
   kicker: string;
   title: string;
+  accentPhrases?: string[];
   className?: string;
   content: ReactNode;
 };
@@ -197,14 +200,9 @@ const slides: Slide[] = [
     className: "slide--title",
     content: (
       <div className="titleSlide">
-        <div className="constellation" aria-hidden="true">
-          <span className="dot dot--a" />
-          <span className="dot dot--b" />
-          <span className="dot dot--c" />
-          <span className="dot dot--d" />
-        </div>
+        <LakestromDotField className="lakestromDotField" />
         <h1>Orograph</h1>
-        <p className="tagline">The operating system for a governed AI workforce.</p>
+        <p className="tagline">The governed orgchart for AI workforce.</p>
         <p className="subcopy">
           Every AI agent in your business gets a job description, a manager,
           permissions, and a budget - enforced by construction. Change what an
@@ -215,9 +213,61 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "02 / problem",
+    kicker: "02 / team",
+    title: "Founder",
+    content: (
+      <div className="teamSlide">
+        <div className="founderPortraitPanel">
+          <img src="/team/photo3.png" alt="Sergey Podolskiy" />
+          <div className="founderMeta">
+            <strong>Sergey Podolskiy</strong>
+            <span>Founder & CEO · Tallinn</span>
+          </div>
+        </div>
+        <div className="founderStory">
+          <p className="founderLead">
+            Sergey Podolskiy — Founder & CEO · Tallinn
+          </p>
+          <div className="founderProofs">
+            <div>
+              <strong>Evolone AI</strong>
+              <p>
+                Runs a team of ex-Microsoft data & AI engineers deploying
+                agentic AI and data systems across financial services,
+                PE-portfolio firms, transport, and tech companies.
+              </p>
+            </div>
+            <div>
+              <strong>Maersk</strong>
+              <p>
+                Led technology transformation and legacy modernization across
+                3,000 applications (20k employees, 7k engineers).
+              </p>
+            </div>
+            <div>
+              <strong>BCG</strong>
+              <p>
+                Implemented data- and tech-heavy projects inside banks and
+                financial institutions, incl. a digital twin with ~$130M impact.
+              </p>
+            </div>
+            <div>
+              <strong>Tuck MBA (Dartmouth)</strong>
+              <p>
+                Earlier: COO scaling an EdTech across 70 countries; CCO of an
+                acquired mobility SaaS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    kicker: "03 / problem",
     title:
       "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production.",
+    accentPhrases: ["building agents", "governance gaps"],
     content: (
       <div className="problemSlide">
         <div className="approachStack" aria-label="Existing approaches">
@@ -280,9 +330,10 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "03 / insight",
+    kicker: "04 / insight",
     title:
       "Orograph runs agents as data loaded into agnostic runtime, every change is a line in the database with e2e provenance and row-level governance.",
+    accentPhrases: ["agents as data", "every change is a line"],
     content: (
       <div className="insightGrid">
         <div>
@@ -312,9 +363,10 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "04 / product",
+    kicker: "05 / product",
     title:
       "Build agentic workforce as you build your human team - Job Description, Goals, KPIs, Feedback Cycles.",
+    accentPhrases: ["as you build your human team"],
     content: (
       <div className="productSlide">
         <ProductScreen />
@@ -330,7 +382,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "05 / value",
+    kicker: "06 / value",
     title: "Value",
     content: (
       <div className="valueSlide">
@@ -378,7 +430,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "06 / why now",
+    kicker: "07 / why now",
     title: "Why now",
     content: (
       <div className="forcesSlide">
@@ -423,7 +475,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "07 / GTM",
+    kicker: "08 / GTM",
     title: "Land with design partners, prove governance, then go commercial.",
     content: (
       <div className="gtmSlide">
@@ -477,7 +529,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "08 / model",
+    kicker: "09 / model",
     title: "A simple, consumption-aligned model.",
     content: (
       <div className="modelSlide">
@@ -508,6 +560,11 @@ const slides: Slide[] = [
           <MiniMetric value="$25K-$75K" label="paid pilot" tone="cyan" />
           <MiniMetric value="$100K-$300K" label="early commercial ACV" tone="violet" />
           <MiniMetric value="dozens -> thousands" label="agent expansion" tone="amber" />
+          <MiniMetric
+            value="$10B-$25B"
+            label="annual token-spend TAM: financial services, PE portfolios, transportation"
+            tone="cyan"
+          />
         </div>
         <p className="bottomCaption">
           We make money in proportion to the value we govern - and our
@@ -517,9 +574,10 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "09 / moat",
+    kicker: "10 / moat",
     title:
       "The moat is compounding governance data that becomes a living copy of the company.",
+    accentPhrases: ["compounding governance data"],
     content: (
       <div className="moatSlide">
         <div className="moatStack">
@@ -568,7 +626,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "10 / vision",
+    kicker: "11 / vision",
     title: "Where this goes: the orgchart for the governed AI workforce.",
     content: (
       <div className="visionSlide">
@@ -600,7 +658,7 @@ const slides: Slide[] = [
     )
   },
   {
-    kicker: "11 / ask",
+    kicker: "12 / ask",
     title: "Status & ask.",
     content: (
       <div className="askSlide">
@@ -685,7 +743,9 @@ export function App() {
             <span className="kicker">{slide.kicker}</span>
             <span className="brand">Orograph</span>
           </header>
-          {slide.className !== "slide--title" && <h2>{slide.title}</h2>}
+          {slide.className !== "slide--title" && (
+            <GlitchHeading as="h2" text={slide.title} accentPhrases={slide.accentPhrases} />
+          )}
           <div className="slideBody">{slide.content}</div>
         </div>
       </section>

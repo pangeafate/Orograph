@@ -1,13 +1,13 @@
 <aside>
 🎯
 
-Build-ready specification for the **Orograph** investor deck (10 slides). Hand this entire document to the coding agent. It contains the visual system, the narrative arc, and a per-slide spec (graphics + exact text + layout). Audience: a **generalist seed fund** — keep jargon low, make the problem visceral, lean on the "governed orgchart" metaphor.
+Build-ready specification for the **Orograph** investor deck (12 slides). Hand this entire document to the coding agent. It contains the visual system, the narrative arc, and a per-slide spec (graphics + exact text + layout). Audience: a **generalist seed fund** — keep jargon low, make the problem visceral, lean on the "governed orgchart" metaphor.
 
 </aside>
 
 ## 0. Global build notes (read first)
 
-**Company:** Orograph — *"The operating system for a governed AI workforce."*
+**Company:** Orograph — *"The governed orgchart for AI workforce."*
 
 **Category hook (throughline):** the **Governed Agentic Orgchart** — every agent has a job description, a manager, permissions, an authority tier, and a budget.
 
@@ -22,27 +22,45 @@ Build-ready specification for the **Orograph** investor deck (10 slides). Hand t
 
 ### Narrative arc (the spine)
 
-Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge → Business Model → Moat → Vision → Status & Ask.
+Title → Founder → Problem → Insight → Product → Value → Why Now → GTM & Wedge → Business Model → Moat → Vision → Status & Ask.
 
 ---
 
 ## Slide 1 — Title
 
-**Graphics:** Clean, premium layout (lakestrom system). Centered wordmark **Orograph**; subtle, restrained background — no heavy gradients. Calm and confident. No founder credit.
+**Graphics:** Clean, premium layout (lakestrom system). Centered wordmark **Orograph** over the Lakestrom-style floating dot field: violet/cyan canvas particles, moving nodes, and short connection lines. Subtle and restrained — no heavy gradients. Calm and confident. No founder credit.
 
 **Text & location:**
 
 - **Center (wordmark):** `Orograph`
-- **Tagline (directly below):** "The operating system for a governed AI workforce."
+- **Tagline (directly below):** "The governed orgchart for AI workforce."
 - **Sub-paragraph (smaller, muted):** "Every AI agent in your business gets a job description, a manager, permissions, and a budget — enforced by construction. Change what an agent can do without a deploy; prove who approved every decision without a forensics project."
 
 ---
 
-## Slide 2 — The Problem
+## Slide 2 — Founder
+
+**Graphics:** Founder portrait from `Clarioo-Interactive-Presentation/public/team/photo3.png` on the left. Right side = concise proof cards.
+
+**Top title:** "Founder"
+
+**Founder line:** "Sergey Podolskiy — Founder & CEO · Tallinn"
+
+**Evolone AI:** "Runs a team of ex-Microsoft data & AI engineers deploying agentic AI and data systems across financial services, PE-portfolio firms, transport, and tech companies."
+
+**Maersk:** "Led technology transformation and legacy modernization across 3,000 applications (20k employees, 7k engineers)."
+
+**BCG:** "Implemented data- and tech-heavy projects inside banks and financial institutions, incl. a digital twin with ~$130M impact."
+
+**Education / earlier:** "Tuck MBA (Dartmouth). Earlier: COO scaling an EdTech across 70 countries; CCO of an acquired mobility SaaS."
+
+---
+
+## Slide 3 — The Problem
 
 **Graphics:** Three "lane" cards stacked vertically on the left. A clear pointer moves from the lane stack to the right-side proof panel. The right panel is the dominant object and contains the **4 missing pillars** as four icon tiles. Remove the bottom big-player/stat/consequence row.
 
-**Top title:** "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production."
+**Top title:** "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production." Accent `building agents` and `governance gaps` in violet.
 
 **Lane 1 — Autonomous, self-building agents** *(Open Claw, Hermes — prosumer/tech-savvy):* Self-mutating black boxes that can go rogue anytime. Observability means building heavy infra (what they do, what they call each tool, when the version changed). And they **token-max** — running inefficiently while building themselves.
 
@@ -54,11 +72,11 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 3 — The Insight: Governed Agentic Orgchart
+## Slide 4 — The Insight: Governed Agentic Orgchart
 
 **Graphics:** Hero = a **Governed Agentic Orgchart** — a department of small "atomic" agent cards reporting up to a manager agent, each card showing its data fields. To the side, a real schema panel (the actual data model).
 
-**Top title:** "Orograph runs agents as data loaded into agnostic runtime, every change is a line in the database with e2e provenance and row-level governance."
+**Top title:** "Orograph runs agents as data loaded into agnostic runtime, every change is a line in the database with e2e provenance and row-level governance." Accent `agents as data` and `every change is a line` in violet.
 
 **Core insight (bold):** "Orograph defines every agent as **governed data, not code** — its job description, manager, permissions, authority tier, and budget *are* the agent. So an **ungoverned agent is structurally impossible**, behavior changes by **editing a row (no redeploy)**, and every action is **traced to who approved it**."
 
@@ -72,11 +90,11 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 4 — Product Snapshot
+## Slide 5 — Product Snapshot
 
 **Graphics:** Real product screens, multi-panel, no stage disclaimers. **Hero = a leaf orgchart of agent departments** where a professional-but-non-technical user creates and manages agents using familiar workplace conventions.
 
-**Top title:** "Build agentic workforce as you build your human team - Job Description, Goals, KPIs, Feedback Cycles."
+**Top title:** "Build agentic workforce as you build your human team - Job Description, Goals, KPIs, Feedback Cycles." Accent `as you build your human team` in violet.
 
 **Hero panel — Orgchart builder:** Departments of atomic agents shown as a leaf/tree orgchart. A non-technical user adds an agent by filling familiar fields — **job description, KPIs, authority/approval tier, who it reports to** — no code. New agent slots into its department and works within its lane.
 
@@ -88,7 +106,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 5 — Value
+## Slide 6 — Value
 
 **Graphics:** Four equal columns. Each column is a strong value proof with a numbered marker and one icon. Keep it clean, spacious, and product/value-oriented.
 
@@ -104,7 +122,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 6 — Why Now
+## Slide 7 — Why Now
 
 **Graphics:** Three "converging forces" columns, one hero stat each. Bottom bar = the open-window conclusion.
 
@@ -126,7 +144,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 7 — Go-to-Market & Wedge
+## Slide 8 — Go-to-Market & Wedge
 
 **Graphics:** Phased timeline with the buyer for each phase merged into it. A wedge-capability panel anchors "why they let us in."
 
@@ -154,7 +172,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 8 — Business Model
+## Slide 9 — Business Model
 
 **Graphics:** Simple, confident layout. One dominant pricing mechanic, a pilot→subscription conversion arrow, and an ACV strip.
 
@@ -171,16 +189,17 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 - **Paid pilot:** ~$25K–$75K
 - **Early commercial ACV:** ~$100K–$300K, rising with managed token spend
 - **Expansion:** ACV compounds as the AI workforce scales from dozens to thousands of agents
+- **Addressable market:** ~$10B–$25B annual token-spend TAM across financial services, PE portfolios, and transportation
 
 **Framing line:** "We make money in proportion to the value we govern — and our architecture makes the customer's bill *smaller*, not bigger."
 
 ---
 
-## Slide 9 — Moat
+## Slide 10 — Moat
 
 **Graphics:** Stacked deepening "moat" visual with the replicating-governance layer as the headline. Side panel = named-competitor differentiation. Bottom = hyperscaler risk reframed as strength.
 
-**Top title:** "The moat is compounding governance data that becomes a living copy of the company."
+**Top title:** "The moat is compounding governance data that becomes a living copy of the company." Accent `compounding governance data` in violet.
 
 **Headline moat — the replicating governance system:** "As a company adopts Orograph, it progressively encodes its **authority, governance, and access** into the agent orgchart — effectively building a **living copy of how the company actually decides and who's allowed to do what.** Ripping that out for a comparable product becomes extremely hard. The governance insight comes from **explicit rules + implicit feedback** given to agents over time — and we use it to build a **governance dataset that makes deployment faster for the next comparable company.** Governance, the knowledge behind it, and the ability to render it as a governed agent orgchart — that's the moat."
 
@@ -200,7 +219,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 10 — Vision
+## Slide 11 — Vision
 
 **Graphics:** A horizon/arc visual — from "governed agents today" to "the orgchart for the AI workforce."
 
@@ -212,7 +231,7 @@ Title → Problem → Insight → Product → Value → Why Now → GTM & Wedge 
 
 ---
 
-## Slide 11 — Status & Ask
+## Slide 12 — Status & Ask
 
 **Graphics:** Two-panel layout. Left = current status; right = the ask with a large watermark number (**$1.5M**).
 
