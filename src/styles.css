@@ -2074,12 +2074,22 @@ body.captureMode .slideFrame::after {
   }
 
   .problemSlide {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
+  }
+
+  .approachStack {
+    display: block;
   }
 
   .approachStack,
   .laneStack {
     gap: 12px;
+  }
+
+  .approachStack .stackLabel {
+    margin-bottom: 12px;
   }
 
   .laneStack {
