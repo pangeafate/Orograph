@@ -21,3 +21,15 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## PDF Export
+
+```bash
+npm run export:pdf
+```
+
+The exporter screenshots each live HTML slide in fullscreen capture mode at 2x
+resolution, then assembles the screenshots into a PDF. By default this writes
+`exports/orograph-presentation.pdf`. Use
+`npm run export:pdf -- --out path/to/file.pdf` to choose a different output
+path, or `npm run export:pdf -- --scale 1.5` for a smaller file.

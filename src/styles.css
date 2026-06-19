@@ -126,6 +126,10 @@ body {
   overflow: hidden;
 }
 
+body.captureMode {
+  overflow: visible;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -178,6 +182,59 @@ h3 {
     linear-gradient(180deg, #FBFCFF, var(--bg-0)),
     repeating-linear-gradient(90deg, rgba(10, 10, 17, 0.038) 0 1px, transparent 1px 120px),
     repeating-linear-gradient(0deg, rgba(10, 10, 17, 0.032) 0 1px, transparent 1px 120px);
+}
+
+body.captureMode .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+body.captureMode .gc-base {
+  visibility: visible !important;
+}
+
+body.captureMode .gc-glitch {
+  display: none !important;
+}
+
+body.captureMode .deckControls,
+body.captureMode .dotNav,
+body.captureMode .progress {
+  display: none;
+}
+
+body.captureMode .deckShell {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body.captureMode .slide {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 0;
+  place-items: center;
+  overflow: hidden;
+}
+
+body.captureMode .slideFrame {
+  flex: 0 0 auto;
+  width: 1500px;
+  max-width: none;
+  height: 843.75px;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: scale(var(--capture-scale, 1.28));
+  transform-origin: center center;
+}
+
+body.captureMode .slideFrame::after {
+  border-radius: 0;
 }
 
 .progress {
@@ -1591,6 +1648,82 @@ h3 {
   line-height: 1;
 }
 
+.slide--appendixBreaker .slideFrame {
+  justify-content: center;
+}
+
+.slide--appendixBreaker .slideHeader {
+  position: absolute;
+  top: 38px;
+  left: 44px;
+  right: 44px;
+}
+
+.slide--appendixBreaker h2 {
+  max-width: none;
+  margin-top: 0;
+  color: var(--violet-bright);
+  font-size: 7rem;
+  line-height: 0.95;
+  text-align: center;
+}
+
+.slide--appendixBreaker .slideBody {
+  flex: 0;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.appendixBreaker span {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.appendixImageSlide {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+}
+
+.appendixImageSlide--pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.appendixImageFrame {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.82);
+  background-image: var(--appendix-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.slide--appendixImage .slideBody {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
 .deckControls {
   position: fixed;
   left: 50%;
@@ -1706,7 +1839,8 @@ h3 {
   .productSlide,
   .modelSlide,
   .moatSlide,
-  .askSlide {
+  .askSlide,
+  .appendixImageSlide--pair {
     grid-template-columns: 1fr;
   }
 
@@ -1752,6 +1886,12 @@ h3 {
     align-items: flex-start;
   }
 
+  .slide--appendixBreaker .slideHeader {
+    top: 18px;
+    left: 16px;
+    right: 16px;
+  }
+
   .kicker {
     gap: 10px;
     font-size: 0.78rem;
@@ -1778,6 +1918,12 @@ h3 {
     overflow-wrap: break-word;
   }
 
+  .slide--appendixBreaker h2 {
+    width: 100%;
+    max-width: 100%;
+    font-size: 3.15rem;
+  }
+
   .slideBody {
     width: 100%;
     min-width: 0;
@@ -1796,6 +1942,7 @@ h3 {
   .askSlide,
   .productSlide,
   .valueSlide,
+  .appendixImageSlide,
   .insightGrid {
     height: auto;
     width: 100%;
@@ -2018,8 +2165,22 @@ h3 {
   .callout,
   .schemaPanel,
   .economicUnlock,
-  .controlPanel {
+  .controlPanel,
+  .appendixImageFrame {
     padding: 16px;
+  }
+
+  .appendixImageSlide {
+    gap: 12px;
+  }
+
+  .appendixImageFrame {
+    border-radius: var(--radius-sm);
+    padding: 8px;
+  }
+
+  .appendixImageSlide--pair .appendixImageFrame {
+    aspect-ratio: 4 / 3;
   }
 
   .axisGrid {
@@ -2084,8 +2245,19 @@ h3 {
 }
 
 @media print {
+  @page {
+    size: 16in 9in;
+    margin: 0;
+  }
+
+  html,
   body {
+    width: 100%;
+    min-height: 100%;
+    background: var(--bg-0);
     overflow: visible;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
   .deckShell {
@@ -2098,8 +2270,36 @@ h3 {
     display: none;
   }
 
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .gc-base {
+    visibility: visible !important;
+  }
+
+  .gc-glitch {
+    display: none !important;
+  }
+
   .slide {
+    break-after: page;
     page-break-after: always;
+    width: 100vw;
+    height: 100vh;
     min-height: 100vh;
+    padding: 28px 30px 90px;
+  }
+
+  .slide:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .slideFrame {
+    width: min(1500px, calc(100vw - 60px));
+    height: min(820px, calc(100vh - 118px));
   }
 }

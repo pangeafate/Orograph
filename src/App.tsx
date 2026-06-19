@@ -193,6 +193,40 @@ const AuditCard = () => (
   </div>
 );
 
+const AppendixImage = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="appendixImageSlide">
+    <div
+      className="appendixImageFrame"
+      role="img"
+      aria-label={alt}
+      style={{ "--appendix-image": `url(${src})` } as CSSProperties}
+    />
+  </div>
+);
+
+const AppendixImagePair = ({
+  left,
+  right
+}: {
+  left: { src: string; alt: string };
+  right: { src: string; alt: string };
+}) => (
+  <div className="appendixImageSlide appendixImageSlide--pair">
+    <div
+      className="appendixImageFrame"
+      role="img"
+      aria-label={left.alt}
+      style={{ "--appendix-image": `url(${left.src})` } as CSSProperties}
+    />
+    <div
+      className="appendixImageFrame"
+      role="img"
+      aria-label={right.alt}
+      style={{ "--appendix-image": `url(${right.src})` } as CSSProperties}
+    />
+  </div>
+);
+
 const slides: Slide[] = [
   {
     kicker: "01 / title",
@@ -202,12 +236,12 @@ const slides: Slide[] = [
       <div className="titleSlide">
         <LakestromDotField className="lakestromDotField" />
         <h1>Orograph</h1>
-        <p className="tagline">The governed orgchart for AI workforce.</p>
+        <p className="tagline">Near-Free Scalable Agentic Workforce</p>
         <p className="subcopy">
-          Every AI agent in your business gets a job description, a manager,
-          permissions, and a budget - enforced by construction. Change what an
-          agent can do without a deploy; prove who approved every decision
-          without a forensics project.
+          Orograph allows non-technical users to create pay-as-you-go atomic
+          agents' fleet by using familiar conventions (orgchart, job
+          descriptions, KPIs etc.), optimizing costs to bare minimum and
+          ensuring strict governance and observability.
         </p>
       </div>
     )
@@ -682,6 +716,66 @@ const slides: Slide[] = [
         </div>
       </div>
     )
+  },
+  {
+    kicker: "13 / appendix",
+    title: "Appendix",
+    className: "slide--appendixBreaker",
+    content: (
+      <div className="appendixBreaker">
+        <span>UI is rough around the edges, current work is focused on the foundations</span>
+      </div>
+    )
+  },
+  {
+    kicker: "14 / appendix",
+    title: "Orgchart with authority and communication lines",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/orgchart-authority-lines.png"
+        alt="Orograph orgchart with authority and communication lines"
+      />
+    )
+  },
+  {
+    kicker: "15 / appendix",
+    title: "Agent prompts stored as first-class database records.",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/agent-prompts-records.png"
+        alt="Agent prompts stored in database records"
+      />
+    )
+  },
+  {
+    kicker: "16 / appendix",
+    title: "Append-only event stream for provenance and incident review.",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/event-stream-provenance.png"
+        alt="Append-only events stream for audit and provenance"
+      />
+    )
+  },
+  {
+    kicker: "17 / appendix",
+    title: "Auditable skills all in one place, created or granted from a catalog.",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImagePair
+        left={{
+          src: "/appendix/skill-catalog-grants.png",
+          alt: "Skill catalog with granted skills"
+        }}
+        right={{
+          src: "/appendix/skill-detail-tool-grant.png",
+          alt: "Skill detail with prompt and granted tool"
+        }}
+      />
+    )
   }
 ];
 
@@ -692,14 +786,50 @@ const initialSlide = () => {
   return Number.isFinite(fromHash) ? clampSlide(fromHash - 1) : 0;
 };
 
+const isCaptureMode = () => new URLSearchParams(window.location.search).has("capture");
+
+const SlideSection = ({ item, index }: { item: Slide; index: number }) => (
+  <section className={`slide ${item.className ?? ""}`} aria-label={`${index + 1}. ${item.title}`}>
+    <div className="slideFrame">
+      <header className="slideHeader">
+        <span className="kicker">{item.kicker}</span>
+        <span className="brand">Orograph</span>
+      </header>
+      {item.className !== "slide--title" && (
+        <GlitchHeading as="h2" text={item.title} accentPhrases={item.accentPhrases} />
+      )}
+      <div className="slideBody">{item.content}</div>
+    </div>
+  </section>
+);
+
 export function App() {
   const [index, setIndex] = useState(initialSlide);
+  const captureMode = useMemo(isCaptureMode, []);
   const slide = slides[index];
   const progress = useMemo(() => ((index + 1) / slides.length) * 100, [index]);
 
   const goTo = useCallback((nextIndex: number) => {
     setIndex(clampSlide(nextIndex));
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("captureMode", captureMode);
+    const setCaptureScale = () => {
+      document.documentElement.style.setProperty("--capture-scale", `${window.innerWidth / 1500}`);
+    };
+
+    if (captureMode) {
+      setCaptureScale();
+      window.addEventListener("resize", setCaptureScale);
+    }
+
+    return () => {
+      document.body.classList.remove("captureMode");
+      document.documentElement.style.removeProperty("--capture-scale");
+      window.removeEventListener("resize", setCaptureScale);
+    };
+  }, [captureMode]);
 
   useEffect(() => {
     window.history.replaceState(null, "", `#${index + 1}`);
@@ -737,18 +867,7 @@ export function App() {
   return (
     <main className="deckShell">
       <div className="progress" style={{ "--progress": `${progress}%` } as CSSProperties} />
-      <section className={`slide ${slide.className ?? ""}`} aria-label={`${index + 1}. ${slide.title}`}>
-        <div className="slideFrame">
-          <header className="slideHeader">
-            <span className="kicker">{slide.kicker}</span>
-            <span className="brand">Orograph</span>
-          </header>
-          {slide.className !== "slide--title" && (
-            <GlitchHeading as="h2" text={slide.title} accentPhrases={slide.accentPhrases} />
-          )}
-          <div className="slideBody">{slide.content}</div>
-        </div>
-      </section>
+      <SlideSection item={slide} index={index} />
       <nav className="deckControls" aria-label="Slide controls">
         <button
           type="button"

@@ -1,5 +1,6 @@
 node_modules/
 dist/
+exports/
 qa/
 .DS_Store
 npm-debug.log*
