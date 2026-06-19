@@ -760,9 +760,29 @@ body.captureMode .slideFrame::after {
 }
 
 .problemSlide .pillarGrid span {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
   min-height: 112px;
   padding: 20px;
   font-size: 1.08rem;
+}
+
+.problemSlide .pillarGrid strong {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.problemSlide .pillarGrid small {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text-1);
 }
 
 .gapPointer {

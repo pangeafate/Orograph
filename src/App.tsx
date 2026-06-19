@@ -300,8 +300,8 @@ const slides: Slide[] = [
   {
     kicker: "03 / problem",
     title:
-      "Existing approaches to building agents are unnecessarily expensive and have fundamental governance gaps, leading to 88% of pilots not making it to production.",
-    accentPhrases: ["unnecessarily expensive and have fundamental governance gaps"],
+      "Currently agents are unnecessarily expensive and have critical governance gaps - 88% of pilots don't make it to production.",
+    accentPhrases: ["unnecessarily expensive and have critical governance gaps"],
     content: (
       <div className="problemSlide">
         <div className="approachStack" aria-label="Existing approaches">
@@ -354,10 +354,22 @@ const slides: Slide[] = [
             </span>
           </div>
           <div className="pillarGrid">
-            <span><ShieldCheck size={21} />Governance</span>
-            <span><Fingerprint size={21} />Provenance</span>
-            <span><Target size={21} />Atomic fine-tuning</span>
-            <span><Radar size={21} />Observability</span>
+            <span>
+              <strong><ShieldCheck size={21} />Governance</strong>
+              <small>Decisions are tracked to the source, agents can't penetrate data-access and permission boundaries.</small>
+            </span>
+            <span>
+              <strong><CircleDollarSign size={21} />Cost Control</strong>
+              <small>Agentic "departments" are atomic and code-augmented (helpers, validators etc.), letting cheap models do the heavy lifting.</small>
+            </span>
+            <span>
+              <strong><Target size={21} />Atomic fine-tuning</strong>
+              <small>Each agent is a versioned combination of prompt fragments and skill grants - easy to goal-optimize by another LLM.</small>
+            </span>
+            <span>
+              <strong><Radar size={21} />Observability</strong>
+              <small>Live behavior observability (tool calls, incidents etc.) enables continuous self-improvement.</small>
+            </span>
           </div>
         </div>
       </div>
