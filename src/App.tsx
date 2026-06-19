@@ -300,8 +300,8 @@ const slides: Slide[] = [
   {
     kicker: "03 / problem",
     title:
-      "Existing approaches to building agents have fundamental governance gaps, leading to 88% of pilots not making it to production.",
-    accentPhrases: ["building agents", "governance gaps"],
+      "Existing approaches to building agents are unnecessarily expensive and have fundamental governance gaps, leading to 88% of pilots not making it to production.",
+    accentPhrases: ["unnecessarily expensive and have fundamental governance gaps"],
     content: (
       <div className="problemSlide">
         <div className="approachStack" aria-label="Existing approaches">
