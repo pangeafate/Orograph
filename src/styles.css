@@ -1145,12 +1145,12 @@ body.captureMode .slideFrame::after {
 
 .productSide {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   min-height: 0;
 }
 
 .controlPanel {
-  padding: 18px;
+  padding: 14px 16px;
 }
 
 .controlPanel label,
@@ -1159,14 +1159,14 @@ body.captureMode .slideFrame::after {
   justify-content: space-between;
   gap: 16px;
   border-top: 1px solid var(--border);
-  padding: 12px 0;
+  padding: 8px 0;
   color: var(--text-2);
   font-size: 0.77rem;
 }
 
 .controlPanel label:first-of-type,
 .traceLine:first-of-type {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .controlPanel label strong,
