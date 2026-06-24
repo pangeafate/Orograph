@@ -605,7 +605,7 @@ body.captureMode .slideFrame::after {
 .laneStack {
   display: grid;
   grid-template-rows: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
   min-height: 0;
 }
 
@@ -637,10 +637,10 @@ body.captureMode .slideFrame::after {
 .laneStack .laneCard {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 18px;
+  gap: 16px;
   align-items: start;
   min-height: 0;
-  padding: 18px;
+  padding: 13px 16px;
 }
 
 .laneCard svg,
@@ -675,7 +675,7 @@ body.captureMode .slideFrame::after {
 
 .laneCard span {
   display: block;
-  margin-top: 6px;
+  margin-top: 4px;
   color: var(--violet-bright);
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -683,10 +683,10 @@ body.captureMode .slideFrame::after {
 }
 
 .laneCard p {
-  margin-top: 12px;
+  margin-top: 8px;
   color: var(--text-2);
-  font-size: 0.84rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 .pillarBand {
