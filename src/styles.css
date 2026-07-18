@@ -1690,21 +1690,29 @@ body.captureMode .slideFrame::after {
 
 .slide--appendixBreaker .slideBody {
   flex: 0;
-  margin-top: 22px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.appendixBreaker span {
-  display: block;
-  max-width: 760px;
+.appendixBreakerTitle {
+  max-width: 900px;
   margin: 0 auto;
-  color: var(--text-2);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 500;
-  line-height: 1.55;
+  color: var(--text-0);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.14;
   text-align: center;
-  text-transform: uppercase;
+}
+
+.appendixBreakerSub {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: var(--text-2);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .appendixImageSlide {
@@ -1738,9 +1746,17 @@ body.captureMode .slideFrame::after {
   overflow: hidden;
 }
 
+.slide--appendixImage h2 {
+  max-width: none;
+  margin-top: 14px;
+  font-size: 1.62rem;
+  line-height: 1.16;
+}
+
 .slide--appendixImage .slideBody {
   flex: 1 1 0;
   min-height: 0;
+  margin-top: 18px;
   overflow: hidden;
 }
 

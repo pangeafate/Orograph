@@ -204,29 +204,6 @@ const AppendixImage = ({ src, alt }: { src: string; alt: string }) => (
   </div>
 );
 
-const AppendixImagePair = ({
-  left,
-  right
-}: {
-  left: { src: string; alt: string };
-  right: { src: string; alt: string };
-}) => (
-  <div className="appendixImageSlide appendixImageSlide--pair">
-    <div
-      className="appendixImageFrame"
-      role="img"
-      aria-label={left.alt}
-      style={{ "--appendix-image": `url(${left.src})` } as CSSProperties}
-    />
-    <div
-      className="appendixImageFrame"
-      role="img"
-      aria-label={right.alt}
-      style={{ "--appendix-image": `url(${right.src})` } as CSSProperties}
-    />
-  </div>
-);
-
 const slides: Slide[] = [
   {
     kicker: "01 / title",
@@ -735,57 +712,120 @@ const slides: Slide[] = [
     className: "slide--appendixBreaker",
     content: (
       <div className="appendixBreaker">
-        <span>UI is rough around the edges, current work is focused on the foundations</span>
+        <p className="appendixBreakerTitle">
+          Orograph &mdash; &ldquo;HR system&rdquo; for your agent fleet
+        </p>
+        <p className="appendixBreakerSub">
+          Like Gumloop, but tweakable, governed and infinitely scalable
+        </p>
       </div>
     )
   },
   {
     kicker: "14 / appendix",
-    title: "Orgchart with authority and communication lines",
+    title:
+      "Agents for all tenants in the company are just lines in the database observable to admin",
     className: "slide--appendixImage",
     content: (
       <AppendixImage
-        src="/appendix/orgchart-authority-lines.png"
-        alt="Orograph orgchart with authority and communication lines"
+        src="/appendix/agents-lines-in-database.png"
+        alt="Governance dashboard agents table — one row per agent identity"
       />
     )
   },
   {
     kicker: "15 / appendix",
-    title: "Agent prompts stored as first-class database records.",
+    title:
+      "Org Charts and Dispatch allow for smallest possible atomic agents, that are very cheap and can do complex tasks together",
     className: "slide--appendixImage",
     content: (
       <AppendixImage
-        src="/appendix/agent-prompts-records.png"
-        alt="Agent prompts stored in database records"
+        src="/appendix/orgchart-dispatch-atomic.png"
+        alt="Orograph graph view with org chart, dispatch and a skill detail panel"
       />
     )
   },
   {
     kicker: "16 / appendix",
-    title: "Append-only event stream for provenance and incident review.",
+    title:
+      "Agents are created with a simple prompt but are modifiable in depth - with LLM or by plugging in capabilities and tools",
     className: "slide--appendixImage",
     content: (
       <AppendixImage
-        src="/appendix/event-stream-provenance.png"
-        alt="Append-only events stream for audit and provenance"
+        src="/appendix/agent-design-modifiable.png"
+        alt="Agent Design loadout card with instructions, skills and tools"
       />
     )
   },
   {
     kicker: "17 / appendix",
-    title: "Auditable skills all in one place, created or granted from a catalog.",
+    title:
+      "Once the agents are created they get a voice in the chat interface - but can also be connected to a variety of channels, where they live alongside human users",
     className: "slide--appendixImage",
     content: (
-      <AppendixImagePair
-        left={{
-          src: "/appendix/skill-catalog-grants.png",
-          alt: "Skill catalog with granted skills"
-        }}
-        right={{
-          src: "/appendix/skill-detail-tool-grant.png",
-          alt: "Skill detail with prompt and granted tool"
-        }}
+      <AppendixImage
+        src="/appendix/chats-and-channels.png"
+        alt="Chats dashboard with agent cards next to a live Telegram thread"
+      />
+    )
+  },
+  {
+    kicker: "18 / appendix",
+    title:
+      "The beauty is that every aspect of the agent is just a line in the database - no scattered MD files. Observable and governed on demand",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/explorer-no-md-files.png"
+        alt="Explorer — read-only filterable view of the agent substrate"
+      />
+    )
+  },
+  {
+    kicker: "19 / appendix",
+    title:
+      "Every piece of an agent's data is browsable - you can build off-the-shelf dashboards on top of the databases that agents own",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/data-browsable.png"
+        alt="Data tables view with per-table ownership and row browsing"
+      />
+    )
+  },
+  {
+    kicker: "20 / appendix",
+    title:
+      "Every element of the agent - fragments, tools, skills, capabilities and schema - is reusable across the entire fleet, versioned in catalogues and assembled at runtime",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/tools-catalogue.png"
+        alt="Tools catalogue generated from the runtime ToolRegistry"
+      />
+    )
+  },
+  {
+    kicker: "21 / appendix",
+    title:
+      "(some examples) Fragments, tools, skills, capabilities and schema packs all live versioned in catalogues",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/reusable-elements-examples.png"
+        alt="Examples of prompt fragments, tools, skills, capabilities, schema packs, channels and plugins"
+      />
+    )
+  },
+  {
+    kicker: "22 / appendix",
+    title:
+      "Every single trace is captured: governance decisions, agent tool calls, routing errors - all available for immediate analysis and continuous improvement",
+    className: "slide--appendixImage",
+    content: (
+      <AppendixImage
+        src="/appendix/events-trace-capture.png"
+        alt="Append-only events stream with per-agent cost breakdown"
       />
     )
   }
