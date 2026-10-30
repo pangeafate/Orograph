@@ -53,7 +53,9 @@ export default function GlitchHeading({
   const normalizedWords = words.map(normalize)
   const accentWordIndexes = new Set()
   for (const phrase of accentPhrases) {
-    const phraseWords = phrase.split(' ').map(normalize).filter(Boolean)
+    // keep symbol-only words such as '+' so they line up with the title's words
+    const phraseWords = phrase.split(' ').filter((w) => w !== '').map(normalize)
+    if (!phraseWords.some(Boolean)) continue
     for (let start = 0; start <= normalizedWords.length - phraseWords.length; start++) {
       const matches = phraseWords.every((word, offset) => normalizedWords[start + offset] === word)
       if (matches) {

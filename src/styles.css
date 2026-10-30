@@ -7498,3 +7498,8 @@ body.captureMode .slideFrame::after {
 @media (max-height: 780px) {
   .slide--bkTitle h2 { font-size: 1.34rem; margin-top: 12px; }
 }
+
+/* closing slide: the title alone, centred in the frame */
+.slide--closing .slideBody {
+  display: none;
+}
